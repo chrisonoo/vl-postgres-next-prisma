@@ -1,6 +1,6 @@
-import prisma from '../lib/prisma'
+import prisma from '../lib/prisma';
 
-async function main() {
+async function main(){
   const response = await Promise.all([
     prisma.users.upsert({
       where: { email: 'rauchg@vercel.com' },
@@ -32,15 +32,16 @@ async function main() {
           'https://images.ctfassets.net/e5382hct74si/4QEuVLNyZUg5X6X4cW4pVH/eb7cd219e21b29ae976277871cd5ca4b/profile.jpg',
       },
     }),
-  ])
-  console.log(response)
+  ]);
+  console.log(response);
 }
+
 main()
   .then(async () => {
-    await prisma.$disconnect()
+    await prisma.$disconnect();
   })
   .catch(async (e) => {
-    console.error(e)
-    await prisma.$disconnect()
-    process.exit(1)
-  })
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
