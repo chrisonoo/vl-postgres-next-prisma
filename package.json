@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "prisma generate && next dev",
+    "dev": "dotenv -e .env.local -- prisma generate && dotenv -e .env.local -- prisma db push && dotenv -e .env.local -- prisma db seed && next dev",
     "build": "prisma generate && prisma db push && prisma db seed && next build",
     "start": "next start",
     "lint": "next lint"
