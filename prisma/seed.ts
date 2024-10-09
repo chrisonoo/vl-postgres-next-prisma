@@ -32,6 +32,16 @@ async function main(){
           'https://images.ctfassets.net/e5382hct74si/4QEuVLNyZUg5X6X4cW4pVH/eb7cd219e21b29ae976277871cd5ca4b/profile.jpg',
       },
     }),
+    await prisma.users.upsert({
+      where: { email: 'stey2@vercel.com' },
+      update: {},
+      create: {
+        name: 'Steven Tey 2',
+        email: 'stey@vercel2.com',
+        image:
+          'https://images.ctfassets.net/e5382hct74si/4QEuVLNyZUg5X6X4cW4pVH/eb7cd219e21b29ae976277871cd5ca4b/profile.jpg',
+      },
+    }),
   ]);
   console.log(response);
 }
