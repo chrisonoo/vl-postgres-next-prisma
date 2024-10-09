@@ -5,22 +5,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "db:dev:local": "dotenv -e .env.local -- sh -c \"prisma db push && prisma db seed\"",
-    "db:dev:local:reset": "dotenv -e .env.local -- sh -c \"prisma db push --force-reset && prisma db seed\"",
+    "dev:local:db": "dotenv -e .env.local -- sh -c \"prisma db push && prisma db seed\"",
+    "dev:local:db:reset": "dotenv -e .env.local -- sh -c \"prisma db push --force-reset && prisma db seed\"",
     "dev:local": "dotenv -e .env.local -- prisma generate && next dev",
-
-
-    "db:preview:local": "dotenv -e .env.preview.local -- sh -c \"prisma db push && prisma db seed\"",
-    "db:preview:local:reset": "dotenv -e .env.preview.local -- sh -c \"prisma db push --force-reset && prisma db seed\"",
+    "preview:local:db": "dotenv -e .env.preview.local -- sh -c \"prisma db push && prisma db seed\"",
+    "preview:local:db:reset": "dotenv -e .env.preview.local -- sh -c \"prisma db push --force-reset && prisma db seed\"",
     "preview:local": "dotenv -e .env.preview.local -- sh -c \"prisma generate && next build && next start -p 3001\"",
-
-
-    "db:preview": "dotenv -e .env.preview -- sh -c \"prisma db push && prisma db seed\"",
-    "db:preview:reset": "dotenv -e .env.preview -- sh -c \"prisma db push --force-reset && prisma db seed\"",
-    "build": "pnpm $BUILD_SCRIPT",
-    "build:preview": "prisma generate && next build",
-    
-    
+    "preview:db": "dotenv -e .env.preview -- sh -c \"prisma db push && prisma db seed\"",
+    "preview:db:reset": "dotenv -e .env.preview -- sh -c \"prisma db push --force-reset && prisma db seed\"",
+    "build": "prisma generate && next build",
     "lint": "next lint"
   },
   "prisma": {
